@@ -13,10 +13,24 @@ export class HomeComponent {
 
    bannerResult: any = [];
    trendingMovieResult: any = [];
+   actionMovieResult: any=[];
+   adventureMovieResult: any=[];
+   animationMovieResult: any=[];
+   comedyMovieResult: any=[];
+   documentaryMovieResult: any=[];
+   scienceFictionMovieResult: any=[];
+   thrillerMovieResult: any=[];
 
   ngOnInit(): void{
     this.bannerData();
     this.trendingData();
+    this.actionMovieData();
+    this.adventureMovieData();
+    this.animationMovieData();
+    this.comedyMovieData();
+    this.documentaryMovieData();
+    this.scienceFictionMovieData();
+    this.thrillerMovieData();
   }
 
   //Bnner Data
@@ -32,6 +46,49 @@ export class HomeComponent {
         this.trendingMovieResult = result.results;
       });
     }
+
+    actionMovieData(){
+      this.service.fetchActionMovies().subscribe((result) =>{
+        this.actionMovieResult = result.results;
+      });
+    }
+
+    adventureMovieData(){
+      this.service.fetchAdventureMovies().subscribe((result) =>{
+        this.adventureMovieResult = result.results;
+      });
+    }
+
+    animationMovieData(){
+      this.service.fetchAnimationMovies().subscribe((result) =>{
+        this.animationMovieResult = result.results;
+      });
+    }
+
+    comedyMovieData(){
+      this.service.fetchComedyMovies().subscribe((result) =>{
+        this.comedyMovieResult = result.results;
+      });
+    }
+
+    documentaryMovieData(){
+      this.service.fetchDocumentaryMovies().subscribe((result) =>{
+        this.documentaryMovieResult = result.results;
+      });
+    }
+
+    scienceFictionMovieData(){
+      this.service.fetchScienceFictionMovies().subscribe((result) =>{
+        this.scienceFictionMovieResult = result.results;
+      });
+    }
+
+    thrillerMovieData(){
+      this.service.fetchThrillerMovies().subscribe((result) =>{
+        this.thrillerMovieResult = result.results;
+      });
+    }
+    
 }
 
 
